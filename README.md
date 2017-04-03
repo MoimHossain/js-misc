@@ -289,6 +289,49 @@ function frequency(group) {
 //SELECT number, count(number) FROM numbers GROUP BY number HAVING count(number) > 1 AND isPair(number)
 query().select(frequency).from(numbers).groupBy(id).having(greatThan1).having(isPair).execute(); // [{"value":2,"frequency":2},{"value":6,"frequency":2}])
 ``` 
+with JavaScript Objects and arrays.
+
+
+
+## Math expression evaluation (Reverse polish notations)
+Given a mathematical expression as a string this class returns the result as a number.
+
+#### Numbers
+
+Number may be both whole numbers and/or decimal numbers. The same goes for the returned result.
+
+#### Operators
+
+You need to support the following mathematical operators:
+
+- Multiplication `*`
+- Division `/`
+- Addition `+`
+- Subtraction `-`
+Operators are always evaluated from left-to-right, and `*` and `/` must be evaluated before `+` and `-`.
+
+#### Parentheses
+
+You need to support multiple levels of nested parentheses, ex. `(2 / (2 + 3.33) * 4) - -6`
+
+#### Whitespace
+
+There may or may not be whitespace between numbers and operators.
+
+An addition to this rule is that the minus sign `(-)` used for negating numbers and parentheses will never be separated by whitespace. I.e., all of the following are valid expressions.
+
+```
+1-1    // 0
+1 -1   // 0
+1- 1   // 0
+1 - 1  // 0
+1- -1  // 2
+1 - -1 // 2
+
+6 + -(4)   // 2
+6 + -( -4) // 10
+```
+
 
 ### Background
 This problem I found while I was solving [code kata](https://www.codewars.com/kata/545434090294935e7d0010ab) at leisure. I liked the problem and wrote a solution for it. 
