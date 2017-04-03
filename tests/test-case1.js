@@ -3,7 +3,7 @@ var dump = require('./dump');
 
 module.exports = {
 	run: function () {
-		var query = require('./sql-kata');
+		var query = require('../src/queryObject');
 		var numbers = [1, 2, 3];
 		//dump(query().select().from(numbers).execute());		
 		//dump(query().from(numbers).select().execute());
@@ -94,7 +94,7 @@ module.exports = {
 		}
 
 		
-		dump(query().select(frequency).from(numbers).groupBy(id).having(greatThan1).having(isPair).execute());
+		//dump(query().select(frequency).from(numbers).groupBy(id).having(greatThan1).having(isPair).execute());
 		// [{"value":2,"frequency":2},{"value":6,"frequency":2}])		
 
 	}

@@ -5,7 +5,7 @@ var dump = require('./dump');
 
 module.exports = {
 	run: function () {
-		var query = require('./sql-kata');
+		var query = require('../src/queryObject');
 
 		function name(person) {
 		  return person.name;
